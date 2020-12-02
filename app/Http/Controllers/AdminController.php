@@ -21,7 +21,12 @@ class AdminController extends Controller
             return redirect()->back()->with('alert', 'Incorrect username or password.');
         } else {
             session(['user' => $username]);
-            return redirect('welcome');
+            return redirect('register');
         }
+    }
+
+    public function register() 
+    {
+        return view('register');   
     }
 }

@@ -16,4 +16,5 @@ use App\Http\Controllers\AdminController;
 
 Route::get('', [AdminController::class, 'index']);
 Route::post('', [AdminController::class, 'postLogin']);
+Route::get('register', [AdminController::class, 'register']);
 
