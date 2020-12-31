@@ -10,7 +10,7 @@
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Register Staff</title>
+    <title>Registration Form</title>
 
     <!-- Icons font CSS-->
     <link href="{{url('public/vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet" media="all">
@@ -23,54 +23,79 @@
     <link href="{{url('public/vendor/datepicker/daterangepicker.css')}}" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
-    <link href="{{url('public/css/main-reg.css')}}" rel="stylesheet" media="all">
+    <link href="{{url('public/css/main-r.css')}}" rel="stylesheet" media="all">
 </head>
 
 <body>
-    <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
-        <div class="wrapper wrapper--w780">
-            <div class="card card-3">
-                <div class="card-heading"></div>
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
                 <div class="card-body">
-                    <h2 class="title">Registration Info</h2>
-                    <form method="POST">
-                        <div class="input-group">
-                            <input class="input--style-3" type="text" placeholder="Name" name="name">
+                    <h2 class="title">Registration Form</h2>
+                    <form method="post">
+                        @csrf
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Name</label>
+                                    <input class="input--style-4" type="text" name="name">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Birthday</label>
+                                    <div class="input-group-icon">
+                                        <input class="input--style-4 js-datepicker" type="text" name="birthday">
+                                        <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                        <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Phone Number</label>
+                                    <input class="input--style-4" type="number" name="phone">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Gender</label>
+                                    <div class="p-t-10">
+                                        <label class="radio-container m-r-45">Male
+                                            <input type="radio" checked="checked" name="gender" value="Nam">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="radio-container">Female
+                                            <input type="radio" name="gender" value="Nữ">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col" style="width: 100%;">
+                                <div class="input-group">
+                                    <label class="label">Address</label>
+                                    <input class="input--style-4" type="text" name="address">
+                                </div>
+                            </div>
                         </div>
                         <div class="input-group">
-                            <input class="input--style-3 js-datepicker" type="text" placeholder="Birthdate" name="birthday">
-                            <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
-                        </div>
-                        <div class="input-group">
+                            <label class="label">Job</label>
                             <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="gender">
-                                    <option disabled="disabled" selected="selected">Gender</option>
-                                    <option>Male</option>
-                                    <option>Female</option>
-                                    <option>Other</option>
+                                <select name="job">
+                                    <option disabled="disabled" selected="selected">Choose option</option>
+                                    <option value="1">Manager</option>
+                                    <option value="2">Sale Staff</option>
+                                    <option value="3">Warehouse Staff</option>
                                 </select>
                                 <div class="select-dropdown"></div>
                             </div>
                         </div>
-                        <div class="input-group">
-                            <input class="input--style-3" type="text" placeholder="Address" name="address">
-                        </div>
-                        <div class="input-group">
-                            <input class="input--style-3" type="text" placeholder="Phone" name="phone">
-                        </div>
-                        <div class="input-group">
-                            <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="gender">
-                                    <option disabled="disabled" selected="selected">Job</option>
-                                    <option>Manager</option>
-                                    <option>Sale</option>
-                                    <option>Warehouse Staff</option>
-                                </select>
-                                <div class="select-dropdown"></div>
-                            </div>
-                        </div>
-                        <div class="p-t-10">
-                            <button class="btn btn--pill btn--green" type="submit">Submit</button>
+                        <div class="p-t-15">
+                            <button class="btn btn--radius-2 btn--blue" type="submit">Register</button>
                         </div>
                     </form>
                 </div>
