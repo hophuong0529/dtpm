@@ -71,7 +71,11 @@
                                         <option value="">Not Discount</option>
                                     </select> 
                                 </td>
-                            </tr> -->
+                            </tr> -->		
+                            <tr class="order-total">
+                                <th>Bill Total</th>
+                                <td><strong><span></span>{{ number_format(session('total'),0,',','.') }} VNĐ</span></strong> </td>
+                            </tr>
                             <tr class="status">
                                 <th>Status</th>
                                 <td>
@@ -82,10 +86,6 @@
                                         <option value="Export">Export warehouse</option>
                                     </select>   
                                 </td>
-                            </tr>		
-                            <tr class="order-total">
-                                <th>Bill Total</th>
-                                <td><strong><span></span>{{ number_format(session('total'),0,',','.') }} VNĐ</span></strong> </td>
                             </tr>
                         </tfoot>
                     </table>      

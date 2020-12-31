@@ -31,7 +31,7 @@
             <h1 style="text-align: center;">List of products</h1>
         </div>
         <div class="col-md-2">
-            <a href="{{url('showCart')}}" class="btn btn-success" style="width: 150px;"><i class="fa fa-bars"></i> Items of bill ()</a>
+            <a href="{{url('showCart')}}" class="btn btn-success" style="width: 150px;"><i class="fa fa-bars"></i> Items of bill ({{ count(session('cart')) }})</a>
         </div>
     </div>
     <table class="table" style="text-align: center;">
